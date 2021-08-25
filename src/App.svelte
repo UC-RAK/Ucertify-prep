@@ -3,6 +3,7 @@
 	import { fly } from "svelte/transition";
 	import { tweened } from 'svelte/motion';
 	import Modal from "./Modal.svelte";
+	
 
 	let questions = myjson.default;
 	console.log(questions[0].question);
@@ -11,6 +12,9 @@
 	let page = "overview";
 	let modal;
 
+    let checkanswer = {
+
+	};
 
 
 	let original = 5 * 60;
@@ -26,11 +30,7 @@
 
 let attamp = 0;
 let correct = 0;
-// function answerClick(){
-// 	answers[questionPointer]=i;
-// 	attamp++;
-// }
-	
+
  let answers = new Array(questions.length).fill(null);
  let questionPointer = -1;
  let i=0;
@@ -49,6 +49,7 @@ let correct = 0;
 
  
  function restartQuiz(){
+	 page = "overview";
    answers = new Array(questions.length).fill(null);
    questionPointer = 0;
  }
@@ -65,41 +66,43 @@ let correct = 0;
 	}
  }
   function incrementquestion(){
+	console.log(checkanswer);
 	  questionPointer++;
+	  console.log(questionPointer);
 	  let ele = document.getElementsByClassName("butn");
 	  for(let i=0; i<ele.length; i++){
-		 
-		
-		  ele[i].checked = false;
-		  
-		  
+		if(checkanswer[questionPointer] != undefined && checkanswer[questionPointer][i] == "on"){
+		   ele[i].checked = true;
+	   }
+	   else{
+		ele[i].checked = false;
+	   }
 	  }
   }
- 
+   
+   function previousquestion(){
+	   questionPointer--;
+	   unattamp++;
+	   let ele = document.getElementsByName("flexRadioDefault");
+	   for(let i=0;i<ele.length; i++){
+	   if(checkanswer[questionPointer][i] == "on"){
+		   ele[i].checked = true;
+	   }
+   }
+}
   function endBtn(){
-	  alert("Are you sure to submit this test");
     questionPointer = 12;
   }
-//   function nextBtn(){
-// 	  if(questionPointer < questions.length){
-// 		  document.getElementById("next").disabled = false;
-// 	  }
-// 	  else{
-// 		  document.getElementById("next").disabled = true;
-// 	  }
-//   }
 
-let b = [];
-	b = Array.from(questions.keys());
-	console.log(b);
+let keys = [];
+	keys = Array.from(questions.keys());
+	console.log(keys);
 	
 
 let selectedquestion;
 function show(x){
-	console.log(b);
-	console.log(x);
 	page = "details";
-    selectedquestion = b.find(i => i == x);
+    selectedquestion = keys.find(i => i == x);
 	console.log(selectedquestion);
 	return selectedquestion;
 
@@ -112,10 +115,48 @@ function show(x){
 	 page = 'overview';
 	 questionPointer = 12;
  }
+ console.log(questions[0].correctIndex);
+ console.log(questions.length);
+
+ function  nextMove(){
+	 selectedquestion++;
+ }
+ function previousMove(){
+	 selectedquestion--;
+ }
+ let unattamp = 11;
+ function checkAnswer(i){
+	answers[questionPointer] = i
+	console.log(answers);	
+		attamp++;
+	    unattamp--;
+        var ele = document.getElementsByName("flexRadioDefault");
+		for( let i=0; i < ele.length; i++) {
+			if(ele[i].checked){
+			checkanswer[questionPointer] = {
+				 [i] : ele[i].value
+							  }
+					}
+				}
+	   var ele1 = document.getElementsByClassName("navigate");
+	   console.log(ele1);
+	   for(let i=0;i<ele1.length; i++){
+	   if(checkanswer[questionPointer][i] == "on"){
+		   ele1[questionPointer].style.color = "green";
+	   }}
+	    
+   }
+		
+	
+	
+	
+		
+ 
 
 </script>
 
 <style>
+	
   .app {
 	  position : absolute;
 	  top: 0px;
@@ -167,7 +208,6 @@ function show(x){
   }
   
  
- 
  .bottom {
 	 margin-left: 40%;
 	 margin-right: 6%;
@@ -207,8 +247,7 @@ function show(x){
  }
  #options{
 	 width: 80%;
-	 
- }
+	 }
  .mins{
 	 color: black;
  }
@@ -241,16 +280,7 @@ function show(x){
  #first{
 	 margin-left: 10%;
  }
-  /* .review{
-	  width:50%;
-	  height:70%;
-	  overflow: auto;
-	  margin-top:1rem;
-	  border: 1px solid black;
-	  padding: 1rem;
-	 
-	 
-  } */
+  
   .flex-container {
 	  display: flex;
   }
@@ -286,6 +316,12 @@ function show(x){
   #btn2{
 	  margin-left: 10rem;
   }
+  #back{
+	  margin-left: 30%;
+  }
+  .green{
+	  color: green;
+  }
   
 </style>
 {#if page === 'overview'}
@@ -304,27 +340,25 @@ function show(x){
      <div class="main">
 	{#if showDiv}
 	  <div transition:fly = {{ x:0, y:200}} id="myDIV">
-		<ul>
+		<ul id="listItem">
 		{#each questions as question,i}
-	   <li on:click={() =>{list(i)}}><b>Q{i+1}:-</b>{question.question}</li>
+	   <li class="{(checkanswer[i] != undefined ) ?'green': 'navigate'}" on:click={() =>{list(i)}}><b>Q{i+1}:-</b>{question.question}</li>
 	   {/each}
 	</ul>
 	 </div>
 	  {/if}
 	  <div transition:fly = {{ x:0, y:0}} id="options">
       <h2>
-		 {questions[questionPointer].question}
+		 <b>Q{questionPointer+1}:-</b>{questions[questionPointer].question}
 	  </h2>
 	 
-       {#each questions[questionPointer].options as opt,i}
-	 
-	   
+       {#each questions[questionPointer].options as opt,i}   
   <div class="form-check">
    <ul list-style-type =  none>
-	   <li>
-    <input  class="form-check-input butn" type="radio" name="flexRadioDefault" id="flexRadioDefault1" on:click={()=>{answers[questionPointer]=i, attamp++}}>
-    {opt}</li>
-     <!-- <label class="form-check-label" for="flexRadioDefault1">{opt}</label> -->
+	   <label>
+    <input  class="form-check-input butn" type="radio" name="flexRadioDefault" id="radiobutn" on:click={() => {checkAnswer(i)}}>
+    {opt}</label>
+    
     </ul>
       </div>
 	   {/each}
@@ -335,7 +369,7 @@ function show(x){
 			<span class="mins">{minutes}</span>{minname}: <span class="secs">{seconds}</span>s  
 		 <button class="show" on:click={showbox}>List</button>
 		 {questionPointer+1}/{questions.length}
-			<button class="show" disabled={questionPointer==0} on:click={()=>{questionPointer--}}>
+			<button class="show" disabled={questionPointer==0} on:click={previousquestion}>
 				Previous
 			   </button>
 			   <button id="next" class="show" disabled={questionPointer >= questions.length-1} on:click={incrementquestion}>
@@ -373,13 +407,13 @@ function show(x){
             <h2> { questions.length - getScore()}<br>InCorrect:</h2>
 		</div>
 		<div class="score">
-            <h2> {questions.length-attamp}<br>UnAttemp:</h2>
+            <h2> {unattamp}<br>UnAttemp:</h2>
 		</div>
 		
 		<!-- <button on:click={restartQuiz}>
 			Restart Quiz
 		</button> -->
-		<!-- <button >Lessons</button> -->
+		
 		<div class="flex-container">
 		<div class="flex-child">
            <p>View All chapter</p>
@@ -390,10 +424,12 @@ function show(x){
 				{#each questions as question,x}
 			  <li on:click={() =>{show(x)}}>
 				<b>Q{x+1}:-</b>{question.question}>
-			</li>
+			  </li>
+			<br>
 			   {/each}
 			</ul>
 		</div>
+		
 	</div>
 	</div>
 	{/if}
@@ -402,17 +438,36 @@ function show(x){
 	{/if}
 	{#if page === 'details'}
 	<p id = "para" class="upper">uCertify Test prep</p>
-	<section>
-		<h1 style="padding=1rem">welcome to review page</h1>
+	<section >
+		<h1>welcome to review page</h1>
+		
 		<div class="question">
 			<h1>Questions</h1>
 		   <p><b>Q{selectedquestion + 1}:- </b>{questions[selectedquestion].question}</p>
-		  </div>
-		<div class="explanation">
-			<h1>Explanations</h1>
-		  <p>{@html questions[selectedquestion].explanation}</p>
-		</div>
-		<button on:click={Back}>Go to result page</button>
+		{#each questions[selectedquestion].options as opt,i}
+		<div class="form-check">
+		 <ul list-style-type =  none>
+			 <li id="list2" class="review-answer" >
+		  <input  disabled class="form-check-input butn" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  >
+		  {opt}</li>
+		  
+		  </ul>
+			</div>
+			 {/each}
+			</div>
+			 <div class="explanation">
+				<h1>Explanations</h1>
+				<p>{@html questions[selectedquestion].explanation}</p>
+			</div>
+		<p>
+		<button class="btn1" id="back" on:click={previousMove}>Previous</button>
+		<button class="btn1" on:click="{nextMove}">Next</button>
+		<button class="btn1" on:click="{Back}">Go to Result page</button>
+		<button class="btn1" on:click={restartQuiz}>
+			Restart Quiz
+		</button>
+	</p>	
+
 	</section>
 	{/if}
   
