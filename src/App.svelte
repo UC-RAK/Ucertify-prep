@@ -6,7 +6,6 @@
 	
 
 	let questions = myjson.default;
-	console.log(questions[0].question);
 	
 	
 	let page = "overview";
@@ -35,13 +34,14 @@ let correct = 0;
  let questionPointer = -1;
  let i=0;
  let incorrect = 0;
+ let score;
 
  function getScore(){
    let score = answers.reduce((acc, val, index)=>{
-    if(questions[index].correctIndex == val){
+    if(questions[index].correctIndex === val){
 	 return acc + 1;
   }
-     return acc
+    return acc
 	},0)
 	return score;
 	
@@ -66,10 +66,10 @@ let correct = 0;
 	}
  }
   function incrementquestion(){
-	console.log(checkanswer);
 	  questionPointer++;
 	  console.log(questionPointer);
 	  let ele = document.getElementsByClassName("butn");
+	  console.log(ele.length);
 	  for(let i=0; i<ele.length; i++){
 		if(checkanswer[questionPointer] != undefined && checkanswer[questionPointer][i] == "on"){
 		   ele[i].checked = true;
@@ -104,6 +104,7 @@ function show(x){
 	page = "details";
     selectedquestion = keys.find(i => i == x);
 	console.log(selectedquestion);
+	
 	return selectedquestion;
 
 }
@@ -127,7 +128,7 @@ function show(x){
  let unattamp = 11;
  function checkAnswer(i){
 	answers[questionPointer] = i
-	console.log(answers);	
+		
 		attamp++;
 	    unattamp--;
         var ele = document.getElementsByName("flexRadioDefault");
@@ -138,21 +139,9 @@ function show(x){
 							  }
 					}
 				}
-	   var ele1 = document.getElementsByClassName("navigate");
-	   console.log(ele1);
-	   for(let i=0;i<ele1.length; i++){
-	   if(checkanswer[questionPointer][i] == "on"){
-		   ele1[questionPointer].style.color = "green";
-	   }}
-	    
+				console.log(answers);
    }
 		
-	
-	
-	
-		
- 
-
 </script>
 
 <style>
@@ -161,12 +150,12 @@ function show(x){
 	  position : absolute;
 	  top: 0px;
 	  left: 0px;
-	  width: 100vw;
+	  width: 98vw;
 	  height: 100vh;
   }
   .app > div{
 	  width: 100%;
-	  height: 100%;
+	  height: 80%;
 
   }
   .app .start-screen{
@@ -185,8 +174,14 @@ function show(x){
 	  cursor: pointer;
   }
   .app .quiz-screen .main {
-	  padding: 50px;
+	  width: 93%;
+	  margin-right:0;
+	  margin-left: 1rem;
 	  padding-top: 0px;
+  }
+  
+  #options{
+	  margin-right: 0px;
   }
  
   .quiz-screen{
@@ -204,13 +199,17 @@ function show(x){
 	  background: #eee;
   }
   .app .quiz-screen .footer {
-	 margin: 0 1rem;
+	 margin-top:0px;
+  }
+  .footer {
+     margin-right: 1rem;
+	 width: 97%;
   }
   
  
  .bottom {
-	 margin-left: 40%;
-	 margin-right: 6%;
+	 margin-left: 26%;
+	 margin-right: 7%;
  }
  .upper {
 	 padding-top: 2px;
@@ -232,6 +231,7 @@ function show(x){
 	 width: 18%;
 	 height: 23rem;
 	 overflow: scroll;
+	 margin-top:6rem;
  }
  .show{
 
@@ -241,12 +241,15 @@ function show(x){
 	  outline: none;
 	  border-radius: 10px;
 	  cursor: pointer;
+	  margin-right: 1rem;
+	  width: 6rem;
  }
  ul{
 	 list-style-type:none;
  }
  #options{
 	 width: 80%;
+	 margin-top: 6rem;
 	 }
  .mins{
 	 color: black;
@@ -256,6 +259,7 @@ function show(x){
  }
  #para{
 	 margin-top:0;
+	 width:100%;
  }
  .score-screen{
 	 width: 100%;
@@ -269,6 +273,7 @@ function show(x){
 	 height: 7rem;
 	 padding: 2px;
 	 margin: 0.5rem;
+	 margin-top:5rem;
  }
  .score h2{
 	 padding: 0.5rem;
@@ -283,30 +288,36 @@ function show(x){
   
   .flex-container {
 	  display: flex;
+	  margin-left:0px;
+	  width:98%;
   }
   .flex-child{
 	  flex:1;
 	  border: 1px solid black;
-	  margin: 2px;
-	  padding: 10px;
+	  margin: 1px;
+	  padding: 5px;
   }
   .flex-child:first-child{
-	  margin-right: 10px;
+	  margin-right: 5px;
 	  width: 30%;
   }
   .question {
-	  width: 100%;
+	  width: 97%;
 	  height: 40%;
 	  border: 1px solid black;
 	  margin: 1rem;
 	  padding: 1rem;
+	  border-radius: 10px;
+	  background-color:#F8F8F8;
   }
   .explanation{
-	  width: 100%;
+	  width: 97%;
 	  height: 50%;
 	  margin: 1rem;
 	  padding: 1rem;
 	  border: 1px solid black;
+	  border-radius: 10px;
+	  background-color: #F8F8F8;
   }
   .btn1{
 	  float: left;
@@ -322,12 +333,30 @@ function show(x){
   .green{
 	  color: green;
   }
-  
+  .flex-child ul li:hover{
+	  cursor: pointer;
+  }
+  .show-reviewbtn{
+	background: #4a77dc;
+	  color: white;
+	  border: none;
+	  outline: none;
+	  border-radius: 10px;
+	  cursor: pointer;
+	  margin-right: 1rem;
+	  width: 8rem; 
+	  margin-bottom:2rem;
+	  margin-top:1.5rem;
+  }
+  .blue{
+	  color: blue;
+  }
 </style>
 {#if page === 'overview'}
+<p class="upper">uCertify Test prep</p>
 <div class="app">
 	{#if questionPointer==-1}
-	<p class="upper">uCertify Test prep</p>
+	
 	
 	<div class="start-screen">
 		<button on:click={()=>questionPointer = 0}>
@@ -336,13 +365,14 @@ function show(x){
 	</div>
 	{:else if !(questionPointer > answers.length-1)}
 	 <div class="quiz-screen">
-		<p class="upper">uCertify Test prep</p>
+		
      <div class="main">
+		
 	{#if showDiv}
 	  <div transition:fly = {{ x:0, y:200}} id="myDIV">
 		<ul id="listItem">
 		{#each questions as question,i}
-	   <li class="{(checkanswer[i] != undefined ) ?'green': 'navigate'}" on:click={() =>{list(i)}}><b>Q{i+1}:-</b>{question.question}</li>
+	   <li class="{(checkanswer[i] != undefined ) ?'green': 'navigate'}" on:click={() =>{list(i)}}><b>Q{i+1}:-</b>{question.snippet}</li>
 	   {/each}
 	</ul>
 	 </div>
@@ -368,7 +398,7 @@ function show(x){
 		 <p class="bottom">
 			<span class="mins">{minutes}</span>{minname}: <span class="secs">{seconds}</span>s  
 		 <button class="show" on:click={showbox}>List</button>
-		 {questionPointer+1}/{questions.length}
+		 {questionPointer+1}/{questions.length}&nbsp;&nbsp;
 			<button class="show" disabled={questionPointer==0} on:click={previousquestion}>
 				Previous
 			   </button>
@@ -387,7 +417,7 @@ function show(x){
 	 </div>
 	</div>
 	{:else}
-	<p id = "para" class="upper">uCertify Test prep</p>
+	<!-- <p class="upper">uCertify Test prep</p> -->
 		<div class="score-screen"> 
 		<p id = "div1">
 			<div id="first" class="score">
@@ -423,7 +453,7 @@ function show(x){
 			<ul id='container'>
 				{#each questions as question,x}
 			  <li on:click={() =>{show(x)}}>
-				<b>Q{x+1}:-</b>{question.question}>
+				<b>Q{x+1}:-</b>{question.question}
 			  </li>
 			<br>
 			   {/each}
@@ -437,9 +467,10 @@ function show(x){
 	</div>
 	{/if}
 	{#if page === 'details'}
-	<p id = "para" class="upper">uCertify Test prep</p>
-	<section >
-		<h1>welcome to review page</h1>
+	
+	<section>
+		<p id = "para" class="upper">uCertify Test prep</p>
+		<h1 style="text-align : center;">welcome to review page</h1>
 		
 		<div class="question">
 			<h1>Questions</h1>
@@ -447,8 +478,8 @@ function show(x){
 		{#each questions[selectedquestion].options as opt,i}
 		<div class="form-check">
 		 <ul list-style-type =  none>
-			 <li id="list2" class="review-answer" >
-		  <input  disabled class="form-check-input butn" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  >
+			 <li class={(checkanswer[selectedquestion] != undefined &&  checkanswer[selectedquestion][i] == 'on') ? "blue" : ""}>
+		  <input  disabled class="form-check-input butn" type="radio" name="radio-btn" id="flexRadioDefault1">
 		  {opt}</li>
 		  
 		  </ul>
@@ -460,10 +491,10 @@ function show(x){
 				<p>{@html questions[selectedquestion].explanation}</p>
 			</div>
 		<p>
-		<button class="btn1" id="back" on:click={previousMove}>Previous</button>
-		<button class="btn1" on:click="{nextMove}">Next</button>
-		<button class="btn1" on:click="{Back}">Go to Result page</button>
-		<button class="btn1" on:click={restartQuiz}>
+		<button class="show-reviewbtn"  id="back" on:click={previousMove}>Previous</button>
+		<button class="show-reviewbtn"  on:click="{nextMove}">Next</button>
+		<button class="show-reviewbtn"  on:click="{Back}">Go to Result</button>
+		<button class="show-reviewbtn"  on:click={restartQuiz}>
 			Restart Quiz
 		</button>
 	</p>	

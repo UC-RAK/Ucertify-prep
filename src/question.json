@@ -1,6 +1,7 @@
 [
     {
         "question": "There are four sections of the HR Impact Model. Which component of the model is considered to be the most client-oriented role?",
+        "snippet": "There are four sections of the HR Impact Model. ... considered to be the most client-oriented role?",
         "options": [
             "Policies and Procedures",
             "Catalyst",
@@ -11,18 +12,20 @@
         "explanation" :"Answer option 'c'  is correct.The consultation role is considered to be the most client-oriented role, as HR Professionals in this role help define the overall organizational strategy.Answer option 'a' is incorrect. Policies and procedures help define the organizational framework, but isn't the most client-facing or client-oriented role the HR Professional must play.Answer option 'b' is incorrect. The HR Professional in the catalyst role processes market demographics, employee attitudes, organizational culture, and how to implement HR best practices.Answer option 'd' is incorrect. Programs and processes is a client-facing role, but it takes more of a functional position in the organization, such as training and development."
     },
     {
-        "question": "You work as a Network Administrator for McRobert Inc. You want to format your floppy disk. Assuming that your floppy disk drive name is A, which of the following commands will you use to accomplish the task??",
+        "question": "You work as a Network Administrator for McRobert Inc. You want to format your floppy disk. Assuming that your floppy disk drive name is A, which of the following commands will you use to accomplish the task?",
+        "snippet": "You work as a Network Administrator for McRobert...ng commands will you use to accomplish the task?",
         "options": [
-            "CHKDSK \\\/F A:",
+            "CHKDSK F A:",
             "FORMAT A",
-            "FORMAT A\\\/full",
-            "\"0\""  
+            "FORMAT A full",
+            "FORMAT A:"  
         ],
         "correctIndex": 1,
-        "explanation": "Answer option 'a'is correct. The <uc:cmd> FORMAT</uc:cmd>  command formats a disk for use with MS-DOS. The <uc:cmd>FORMAT</uc:cmd> command creates a new root directory and file allocation table for the disk. n<uc:stx>Syntax:FORMAT &lt;drive name&gt;:uc:stx> <uc:ref>"
+        "explanation": "Answer option 'a' is correct. The <uc:cmd> FORMAT</uc:cmd>  command formats a disk for use with MS-DOS. The <uc:cmd>FORMAT</uc:cmd> command creates a new root directory and file allocation table for the disk. n<uc:stx>Syntax:FORMAT &lt;drive name&gt;:uc:stx> <uc:ref>"
     },
     {
         "question": "You are an administrator of SQL Server 2000 computer. The SQL Server contains a database, named SalesDB. You have created an .udl file to store the connection configuration for a DTS Package. You want to force the DTS package to use the .udl file to resolve the connections dynamically, and it should be available to network users at run time. You place the .udl file on the network share. Users complain that the DTS package is unable to connect to the database. Why does the connection fail?",
+        "snippet": "You are an administrator of SQL Server 2000 comp...t to the database. Why does the connection fail?",
         "options": [
             "The Always read properties from the UDL file connection property of the DTS package is disabled",
             "The Always read properties from the UDL file connection property of the DTS package is enabled",
@@ -30,10 +33,11 @@
             "The System DNS entry in the registry is not configured for the connection."  
         ],
         "correctIndex": 1,
-        "explanation": "Answer option 'a'  is correct. The <uc:kwd>Always read properties from the UDL file<uc:kwd> connection property specifies that the DTS package resolves connection information dynamically at run time. If this property is disabled, the connection information is copied from the .udl file into the package. Therefore, the .udl file is not referenced again and only editing the DTS package can modify the connection changes. To resolve the issue, you should copy the .udl file on the network share and enable the Always read properties from the UDL file connection property of the DTS package.Answer options <seq no='c'  and 'd'  are incorrect. If you are using a .udl file to store the connection configuration, there is no need to create a system or user DNS entry. Also, creating a registry entry for the connection information will not work, as the registry information will only be available to the local users. Hence, users cannot access the registry of the network computer. <uc:ref> Reference: SQL Book Online Contents: 'DTS Designer Help'The Always read properties from the UDL file connection property specifies that the DTS package resolves connection information dynamically at run time."
+        "explanation": "Answer option 'a'  is correct. The <uc:kwd>Always read properties from the UDL file<uc:kwd> connection property specifies that the DTS package resolves connection information dynamically at run time. If this property is disabled, the connection information is copied from the .udl file into the package. Therefore, the .udl file is not referenced again and only editing the DTS package can modify the connection changes. To resolve the issue, you should copy the .udl file on the network share and enable the Always read properties from the UDL file connection property of the DTS package. Answer options <seq no='c'  and 'd'  are incorrect. If you are using a .udl file to store the connection configuration, there is no need to create a system or user DNS entry. Also, creating a registry entry for the connection information will not work, as the registry information will only be available to the local users. Hence, users cannot access the registry of the network computer. <uc:ref> Reference: SQL Book Online Contents: 'DTS Designer Help'The Always read properties from the UDL file connection property specifies that the DTS package resolves connection information dynamically at run time."
     },
     {
         "question": "There are seven stages of internal consulting that a HR Professional must be familiar with. Which one of the following is not one of the seven stages of internal consulting?",
+        "snippet": "There are seven stages of internal consulting th... one of the seven stages of internal consulting?",
         "options": [
             "Exploring the situation",
             "Implementing",
@@ -41,21 +45,23 @@
             "Developing recommendations"  
         ],
         "correctIndex": 3,
-        "explanation":"Answer option 'C' is correct.Executing the project plan is not one of the seven stages of internal consulting. Executing is part of the project management lifecycle, but it is not one of the seven stages.Answer option 'a'  is incorrect. Exploring the situation is one of the seven stages of internal consulting.Answer option 'b'  is incorrect. Implementing is the sixth stage of internal consulting.Answer option 'd'  is incorrect.  Developing recommendations is one of the seven stages of internal consulting."
+        "explanation":"Answer option 'C' is correct.Executing the project plan is not one of the seven stages of internal consulting. Executing is part of the project management lifecycle, but it is not one of the seven stages. Answer option 'a'  is incorrect. Exploring the situation is one of the seven stages of internal consulting.Answer option 'b'  is incorrect. Implementing is the sixth stage of internal consulting.Answer option 'd'  is incorrect.  Developing recommendations is one of the seven stages of internal consulting."
     },
     {
-        "question": "You have some selected images in Adobe Bridge wh...d commands will you use to accomplish this task?",
+        "question": "You have some selected images in Adobe Bridge which are to be collected in a PDF file and send to the client, so that you may get an approval for your fashion assignment project. Which of the following valid automated commands will you use to accomplish this task?",
+        "snippet": "You have some selected images in Adobe Bridge wh...d commands will you use to accomplish this task?",
         "options": [
             "Convert to PDF",
-            "Output workspace =&gt; PDF",
+            "Output workspace PDF",
             "PDF Creator",
             "Image Processor"  
         ],
         "correctIndex": 2,
-        "explanation":"Answer option 'b' is correct.In Adobe Bridge CS4, the Adobe Media Gallery feature is now known as the Output workspace. This option is used in the Output workspace to export a 'PDF presentation of images' or create a 'Flash Web gallery', which can be uploaded to an ftp server. The PDF option in Output workspace offers a user either to create a regular multi-page PDF or a PDF Presentation, which will then be automatically launched into a full-screen slide show when opened. Answer options 'a'  and 'c' are incorrect. These are not valid options in Photoshop CS4.Answer option 'd' is incorrect. Image Processor cannot be used to convert images in the PDF files. Image Processor works with the multiple image files in a folder in the same way as the batch command. However, while working with Image Processor, there is no need to create an action to start the processing of multiple images with Image Processor. Photoshop Image Processor can convert a set of files to JPEG, PSD, or TIFF format."
+        "explanation":"Answer option 'b' is correct.In Adobe Bridge CS4, the Adobe Media Gallery feature is now known as the Output workspace. This option is used in the Output workspace to export a 'PDF presentation of images' or create a 'Flash Web gallery', which can be uploaded to an ftp server. The PDF option in Output workspace offers a user either to create a regular multi-page PDF or a PDF Presentation, which will then be automatically launched into a full-screen slide show when opened. Answer options 'a'  and 'c' are incorrect. These are not valid options in Photoshop CS4. Answer option 'd' is incorrect. Image Processor cannot be used to convert images in the PDF files. Image Processor works with the multiple image files in a folder in the same way as the batch command. However, while working with Image Processor, there is no need to create an action to start the processing of multiple images with Image Processor. Photoshop Image Processor can convert a set of files to JPEG, PSD, or TIFF format."
     },
     {
-        "question": "Which of the following tools in the Camera Raw t...r dust or other unwanted elements from an image?",
+        "question": "Which of the following tools in the Camera Raw toolbar is used to remove various defects such as sensor dust or other unwanted elements from an image?",
+        "snippet": "Which of the following tools in the Camera Raw t...r dust or other unwanted elements from an image?",
         "options": [
             "Spot Removal",
             "Red-Eye Removal",
@@ -66,7 +72,8 @@
         "explanation":"Answer option 'a' is correct.The Spot Removal tool is used to remove various defects such as sensor dust or other unwanted elements from an image.Answer option 'b' is incorrect. The Red-Eye Removal tool is used to draw a highlight around the subject's iris, and the red is filled in with black.Answer option 'c'  is incorrect. The Graduate Filter is used to apply adjustments to a restricted portion of your photograph.Answer option 'd' is incorrect. The Straighten tool is used to straight those photographs that are not straight, but slightly bent."
     },
     {
-        "question": "Which of the following blending modes is availab...end color only to transparent pixels of a layer?",
+        "question": "Which of the following blending modes is available only for the painting tools and allows you to add the blend color only to transparent pixels of a layer?",
+        "snippet": "Which of the following blending modes is availab...end color only to transparent pixels of a layer?",
         "options": [
             "Behind mode",
             "Clear mode",
@@ -77,7 +84,8 @@
         "explanation":"Answer option 'a'  is correct. The Behind mode is available only for the painting tools. It allows you to add the blend color only to transparent pixels of a layer. It protects the base color and adds new colors to empty areas. This mode works only in layers with Lock Transparency deselected.Answer option 'b'  is incorrect. The Clear mode works in the same way as the Eraser tool. It makes every affected pixel transparent according to its original opacity. This mode is available only for the Line tool, the Paint Bucket tool, the Brush tool, and the Pencil tool. It is also available for the Fill command and the Stroke command. This mode cannot be used on the background layer or the layer that has Preserve Transparency checked. Answer option 'c'  is incorrect. The Darken mode compares the individual color components of the base color and the blend color, and chooses the color, whichever is darker (Lower value of each component of RGB or higher percent of each value of CMYK), as the resultant color. Answer option <seq no='d' is incorrect. The Multiply mode multiplies the base color by the blend color. The resultant color is always darker than the original blend color. Black color multiplied by any color produces black, and white color multiplied by any color leaves the color unchanged."
     },
     {
-        "question": "You are creating a new site. You are using a Uni...g actions will you take to resolve this problem?",
+        "question": "You are creating a new site. You are using a Unix Server. You have provided links to other sites in your site. However, when you click on the links, they do not work. Which of the following actions will you take to resolve this problem?",
+        "snippet": "You are creating a new site. You are using a Uni...g actions will you take to resolve this problem?",
         "options": [
             "Go to Site, select Edit Site, click on the Testing server Category in the Advanced tab, and then set the Server Model to ColdFusion.",
             "Go to Site, select  Edit Site, click on the Testing server Category in the Advanced tab, and then set the Server Model to JSP",
@@ -85,10 +93,11 @@
             "Go to Site, select Edit Site, click on the Local Info Category in the Advanced tab, and then enable the Cache"  
         ],
         "correctIndex": 3,
-        "explanation":"Answer option 'c' is correct.As you are using a Unix server, it is an important factor that the Local Info settings are configured to case-sensitive link checking. The case-sensitive link checking feature ensures that your links will work on a Unix server where links are case-sensitive. If you are using a Windows or Mac server, this does not matter as much, but it is a good idea to follow the strict naming and linking conventions of a Unix system in case you ever move your site to a different server.Answer option <seq no='a'  is incorrect. Going to Site, selecting Edit Site, clicking on the Testing server Category in the Advanced tab, and then setting the Server Model to ColdFusion will specify the server to be a Coldfusion server.Answer option  no='b' is incorrect. Going to Site, selecting Edit Site, clicking on the Testing server Category in the Advanced tab, and then setting the Server Model to JSP will specify the server to be a JSP server. Answer option <seq no='d'  is incorrect. Going to Site, selecting Edit Site, clicking on the Local Info Category in the Advanced tab, and then enabling the Cache will improve the Assets panel's performance and the features which manage the links in a Dreamweaver site."
+        "explanation":"Answer option 'c' is correct. As you are using a Unix server, it is an important factor that the Local Info settings are configured to case-sensitive link checking. The case-sensitive link checking feature ensures that your links will work on a Unix server where links are case-sensitive. If you are using a Windows or Mac server, this does not matter as much, but it is a good idea to follow the strict naming and linking conventions of a Unix system in case you ever move your site to a different server. Answer option <seq no='a'  is incorrect. Going to Site, selecting Edit Site, clicking on the Testing server Category in the Advanced tab, and then setting the Server Model to ColdFusion will specify the server to be a Coldfusion server. Answer option  no ='b' is incorrect. Going to Site, selecting Edit Site, clicking on the Testing server Category in the Advanced tab, and then setting the Server Model to JSP will specify the server to be a JSP server. Answer option <seq no='d'  is incorrect. Going to Site, selecting Edit Site, clicking on the Local Info Category in the Advanced tab, and then enabling the Cache will improve the Assets panel's performance and the features which manage the links in a Dreamweaver site."
     },
     {
-        "question": "Your organization is likely to be purchased by a..., and employees. What is environmental scanning?",
+        "question": "Your organization is likely to be purchased by a competitor. The Management has asked you, in confidence, to complete environmental scanning to determine the effects of the purchase on your organization's culture, customers, and employees. What is environmental scanning?",
+        "snippet": "Your organization is likely to be purchased by a..., and employees. What is environmental scanning?",
         "options": [
             "Environmental scanning is a review of the cultural achievability of a new project, organizational change, or market influence on at least three factors in an organization.",
             "Environmental scanning is a review of the opportunities and threats that a condition may have on an organization.",
@@ -96,10 +105,11 @@
             "Environmental scanning is the process of assessing the effects of an organization change on both macro and micro elements in an organization."  
         ],
         "correctIndex": 2,
-        "explanation":"Answer 'b'  is correct.Environmental scanning requires the HR Professional to review the opportunities and threats that a condition can have on an organization. In this instance the environmental scan is to consider the effects of the organization's sale on employee's, culture, and customers.Answer 'a' is incorrect. This is not a good definition of environmental scanning because the number of factors to be considered or the cultural achievability of a change are not required.'c' is incorrect. The change need not come from an external source - it could be an internal policy, shift in leadership, or other internal catalyst.Answer 'd' is incorrect. This isn't a valid definition of environmental scanning as this answer doesn't consider opportunities or threats that can affect the macro and micro elements in the organization."
+        "explanation":"Answer 'b'  is correct. Environmental scanning requires the HR Professional to review the opportunities and threats that a condition can have on an organization. In this instance the environmental scan is to consider the effects of the organization's sale on employee's, culture, and customers. Answer 'a' is incorrect. This is not a good definition of environmental scanning because the number of factors to be considered or the cultural achievability of a change are not required. 'c' is incorrect. The change need not come from an external source - it could be an internal policy, shift in leadership, or other internal catalyst. Answer 'd' is incorrect. This isn't a valid definition of environmental scanning as this answer doesn't consider opportunities or threats that can affect the macro and micro elements in the organization."
     },
     {
-        "question": "Organizational functions, according to Fayol, co...organizational functions for strategic planning?",
+        "question": "Organizational functions, according to Fayol, conform to one of the six functional areas. Which one of the following is not an area of organizational functions for strategic planning?",
+        "snippet": "Organizational functions, according to Fayol, co...organizational functions for strategic planning?",
         "options": [
             "Technical activities",
             "Financial activities",
@@ -107,10 +117,11 @@
             "Human resource management"  
         ],
         "correctIndex": 4,
-        "explanation": "Answer seq no='d' is correct.Fayol did not include human resource management as one of the six functional areas of an organization. The six areas are: technical activities, sales and marketing, financial activities, security activities, accounting activities, and managerial activities.Answers no='a' , 'b', and 'c'  are incorrect. Technical activities, financial activities, and sales and marketing are components of the six functional areas."
+        "explanation": "Answer seq no='d' is correct. Fayol did not include human resource management as one of the six functional areas of an organization. The six areas are: technical activities, sales and marketing, financial activities, security activities, accounting activities, and managerial activities.Answers no='a' , 'b', and 'c'  are incorrect. Technical activities, financial activities, and sales and marketing are components of the six functional areas."
     },
     {
-        "question": "Your organization is implementing the balanced s... four perspectives of the balanced score method?",
+        "question": "Your organization is implementing the balanced scorecard approach to measuring organizational success. In this balanced scorecard method there are four perspectives you'll consider. Which one of the following are the correct four perspectives of the balanced score method?",
+        "snippet": "Your organization is implementing the balanced s... four perspectives of the balanced score method?",
         "options": [
             "Education, Organizational, Development, and Financial",
             "Developmental, Goals, Satisfaction, and Capital",
@@ -118,7 +129,7 @@
             "Learning and growth, Management, Customer, and Security"  
         ],
         "correctIndex": 3,
-        "explanation": "Answer no='c' is correct.The balance scorecard uses four perspectives as follows: Learning and growth, Business process, Customer, and Financial.Answers seq no='a', seq no='b' , and <seq no='d' /> are incorrect. These are not the correct definitions of the balanced score method."
+        "explanation": "Answer no='c' is correct. The balance scorecard uses four perspectives as follows: Learning and growth, Business process, Customer, and Financial.Answers seq no='a', seq no='b' , and <seq no='d' /> are incorrect. These are not the correct definitions of the balanced score method."
     }
 
 ]
